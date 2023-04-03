@@ -13,8 +13,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                dir("/var/lib/jenkins/workspace/maven-project/gs-maven/initial/pom.xml") {
-                sh 'mvn -B -DskipTests clean package'
+                dir("/var/lib/jenkins/workspace/maven-project") {
+                sh 'mvn -f gs-maven/initial/pom.xml clean package'
                 }
             }
         }
